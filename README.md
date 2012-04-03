@@ -1,7 +1,8 @@
 Towers of Hanoi canvas game.
 ===========
 
-Just basic mechanic of the game.
+Just basic mechanics of the game.
 Game messages, statistics and blackjack are coming.
 
-Inspired by Simon Sarris
+###Inspired by
+@simonsarris
