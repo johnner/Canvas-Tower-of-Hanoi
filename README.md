@@ -5,4 +5,4 @@ Just basic mechanics of the game.
 Game messages, statistics and blackjack are coming.
 
 ###Inspired by
-@simonsarris
+[@simonsarris](https://twitter.com/simonsarris)
