@@ -1,0 +1,47 @@
+html {
+	background-color:#fff;
+	color:#333;
+	font-family: Chalkboard, Comic Sans MS, sans-serif;
+}
+
+html, body { height:100%; }
+body {
+	margin:0 auto;
+	width:65%;
+	color:#000;
+	text-align: center;
+}
+article header {
+	padding: 0;
+	margin: 35px 0 20px 0;
+}
+p {
+	padding: 0;
+	margin: 5px 0;
+}
+
+a:link,
+a:visited {
+	color: #777;
+	text-decoration: none;
+	border-bottom: 1px dotted #AAAAAA;
+}
+
+a:hover,
+a:active {
+	color: #000;
+	border-bottom: 1px dotted #C00000;	
+}
+
+#wrapper {
+	margin: 0 auto;
+}
+
+#win {
+	display: block;
+	color: #cf8717;
+}
+
+#win.hidden {
+	display:none;
+}

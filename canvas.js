@@ -87,9 +87,9 @@ Text.prototype.hide = function (ctx) {
 
 function Spike (set) {
 	this.setInitial(set);
-	this.w = 10;
-	this.h = 70;
-	this.fill = 'rgba(181, 170, 132, .8)';
+	this.w = 5;
+	this.h = 80;
+	this.fill = 'rgba(66, 70, 72, .8)';
 	this.draggable = false;
 	this.name = this.getName('Spike');
 	this.blocks = [];
@@ -366,6 +366,7 @@ function Level (sets) {
 	this.spikes = sets.spikes;
 	this.blocks = sets.blocks;
 	this.winSpike = 2;
+	this.onwin = sets.onwin || function (){};
 	this.selected = null;
 	
 	this.drag = sets.drag || function () {};
@@ -451,8 +452,7 @@ Level.prototype.winState = function () {
 };
 
 Level.prototype.win = function () {
-	
-	CanvasState.text('WIN!');
+	this.onwin();	
 };
 
 /* Game statistics */
@@ -464,14 +464,14 @@ function init() {
 	var s = new CanvasState(document.getElementById('canvas'), new Level({
 		name: 'First',
 		spikes: [
-			new Spike({x:60,y:200}),
-			new Spike({x:140,y:200}),
-			new Spike({x:220,y:200})
+			new Spike({x:62,y:190}),
+			new Spike({x:142,y:190}),
+			new Spike({x:222,y:190})
 		],
 		blocks: [
-			new Block({x:22,y:250,w:85,h:20, fill:'rgba(127, 255, 212, .5)'}),
-			new Block({x:34,y:230,w:60,h:20, fill:'rgba(103, 140, 219, .5)'}),
-			new Block({x:45,y:210,w:40,h:20, fill:'rgba(240, 132, 155, .5)'})
+			new Block({x:22,y:250,w:85,h:20, fill:'rgba(20, 217, 94, .5)'}),
+			new Block({x:34,y:230,w:60,h:20, fill:'rgba(61, 114, 232, .5)'}),
+			new Block({x:45,y:210,w:40,h:20, fill:'rgba(231, 82, 82, .5)'})
 		],
 		selectionWidth: 2,
 		
@@ -483,7 +483,7 @@ function init() {
 			var spike = this.spikeAccept(block);
 			this.dropBlock(spike, block);
 			if ( this.winState() ) {
-				
+				this.win();	
 			}
 			CanvasState.redraw();
 		},
@@ -495,7 +495,10 @@ function init() {
 			block.select();
 		},
 		
-		deselect: function () {}
+		deselect: function () {},
+		onwin: function () {
+			document.getElementById('win').className = '';
+		}
 		
 	}));
 	return {
