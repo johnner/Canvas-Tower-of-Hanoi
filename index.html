@@ -1,18 +1,37 @@
 <!doctype HTML>
 <html>
-<head>
-<title>Hanoy Towers</title>
-</head>
-<body>
-
-<canvas id="canvas" width="300" height="300" style="border: 1px solid black;">
-This text is displayed if your browser does not support HTML5 Canvas.
-</canvas>
-
-<script src="canvas.js"></script>
-<script>
-	game = init();
-</script>
-
-</body>
+	<head>
+		<title>Hanoy Towers</title>
+		<link type="text/css" rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div id="wrapper">
+			<header role="banner">
+				<nav role="navigation">
+					<a title="Back to source" href="https://github.com/johnner/Canvas-Tower-of-Hanoi">&larr; github source</a>
+				</nav>
+			</header>
+			<article class="description">
+				<header>
+						<h1>Rules:</h1>
+						<p>
+							Move all the bricks to the rightmost pin.
+						</p>
+						<p>
+							Larger cubes can't lay atop smaller ones.
+						</p>
+				</header>
+				<canvas id="canvas" width="300" height="300" style="border: 1px solid black;">
+					This text is displayed if your browser does not support HTML5 Canvas.
+				</canvas>
+				<aside id="win" class="hidden">
+					You win!
+				</aside>
+			</article>
+		</div>
+		<script src="canvas.js"></script>
+		<script>
+			game = init();
+		</script>
+	</body>
 </html>
