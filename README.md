@@ -7,5 +7,3 @@ Demo page: http://johnner.github.com/Canvas-Tower-of-Hanoi/
 
 ###Inspired by
 [@simonsarris](https://twitter.com/simonsarris)
-
-jhnner＠gmail․com 
